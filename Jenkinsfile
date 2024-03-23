@@ -31,8 +31,8 @@ pipeline{
             steps{
                 script{
                     sh """
-                        git config --global user.name 'devopswthaws58'
-                        git config --global user.email 'devopswithaws58@gmail.com'
+                        git config --global user.name "Devopswithaws58"
+                        git config --global user.email "devopswithaws58@gmail.com"
                         git add deployment.yaml
                         git commit -m 'updated deployment manifest file'
                     """

@@ -29,14 +29,16 @@ pipeline{
         }
         stage('push the changed deployment file to git'){
             steps{
-                sh """
-                    git config --global user.name "devopswthaws58"
-                    git config --global user.email "devopswithaws58@gmail.com"
-                    git add deployment.yaml
-                    git commit -m 'updated deployment manifest file'
-                """
-                withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]){
-                    sh 'git push https://github.com/Devopswithaws58/gitops-register-app.git main'
+                script{
+                    withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]){
+                    sh """
+                       git config --global user.name devopswthaws58
+                       git config --global user.email devopswithaws58@gmail.com
+                       git add deployment.yaml
+                       git commit -m 'updated deployment manifest file'
+                       git push https://github.com/Devopswithaws58/gitops-register-app.git main
+                    """
+                    }
                 }
             }
         }

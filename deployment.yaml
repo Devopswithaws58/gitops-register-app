@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: register-app-deployment
+  name: register-app:${IMAGE_TAG}
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: register-app
+      app: register-app:${IMAGE_TAG}
   template:
     metadata:
       labels:
-        app: register-app
+        app: register-app:${IMAGE_TAG}
     spec:
       containers:
-        - name: register-app
-          image: devopswthaws58/register-app:1.0.0-5
+        - name: register-app:${IMAGE_TAG}
+          image: devopswthaws58/register-app:${IMAGE_TAG}
           resources:
             limits:
               memory: "256Mi"

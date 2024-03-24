@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: register-app
-          image: devopswthaws58/register-app-pipeline:1.0.0-28
+          image: devopswthaws58/register-app-pipeline:1.0.0-29
           resources:
             limits:
               memory: "256Mi"
